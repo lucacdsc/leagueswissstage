@@ -17,3 +17,5 @@ It's a one-dimensional array holding data of any type.
 Data sets in Pandas are usually multi-dimensional tables, called DataFrames.
 
 Series is like a column, a DataFrame is the whole table.
+
+![alt text](image.png)
