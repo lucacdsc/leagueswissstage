@@ -1,5 +1,6 @@
 #%%
 import pandas as pd
+import numpy as np
 # %%
 df = pd.read_csv('data/champions.csv')
 df.head(50)
@@ -48,5 +49,15 @@ df.nlargest(3,'DPM')
 # Liste os campeões com GD@15 positivo (ganhando mais ouro aos 15 minutos do que seus adversários).
 df.info()
 champions_winning_lane_phase = df['GD@15'] > 0
-df[champions_winning_lane_phase].sort_values(by='GD@15',ascending=False).head()
+df[champions_winning_lane_phase].sort_values(by='GD@15',ascending=False)
+# %%
+#Adicione uma nova coluna chamada - Efficiency, calculada como - Efficiency = DPM / GPM e exiba os cinco campeões com a maior eficiência.
+df.info()
+df['Efficieny'] = np.divide(df['DPM'],df['GPM'], out=np.zeros_like(df['DPM'],dtype=float), where= df['GPM'] != 0).round(2)
+selected_columns = df[['Champion','DPM','GPM','Efficieny']]
+selected_columns.head(6)
+# %%
+mean_csd15 = df.groupby('Picks')['CSD@15'].mean()
+mean_xpd15 = df.groupby('Picks')['XPD@15'].mean()
+max_gd15 = df.groupby('Picks')['GD@15'].max()
 # %%
