@@ -18,4 +18,4 @@ Data sets in Pandas are usually multi-dimensional tables, called DataFrames.
 
 Series is like a column, a DataFrame is the whole table.
 
-![alt text](image.png)
+![DataFrame](../imgs/image2.png)
