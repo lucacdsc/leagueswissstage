@@ -1,3 +1,4 @@
+
 # What is Pandas?
 
 Pandas is a Python library used for working with data sets.
@@ -19,3 +20,10 @@ Data sets in Pandas are usually multi-dimensional tables, called DataFrames.
 Series is like a column, a DataFrame is the whole table.
 
 ![DataFrame](../imgs/image2.png)
+
+## Data purification:
+Data cleaning is the process of eliminating or changing any information in our dataset that is duplicated, incorrectly formatted, null, or even an inaccurate record.
+
+There are several approaches to addressing these issues:
+
+You can eliminate null records, change a certain column to date format, eliminate duplicate entries, and swap out a particular record for another by using the `.dropna()`, `.fillna()`, `.to_datetime()`, and `.drop_duplicates()` methods.
